@@ -1,0 +1,1043 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --success-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --warning-color: #f39c12;
+    --light-color: #ecf0f1;
+    --dark-color: #34495e;
+    --university-color: #8e44ad;
+    --university-gold: #f1c40f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: var(--dark-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(135deg, var(--university-color), var(--secondary-color));
+    color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-header {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.university-branding {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.university-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.library-system {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-top: 0.3rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+.user-avatar {
+    font-size: 1.2rem;
+}
+
+.user-name {
+    font-weight: 500;
+}
+
+.user-dropdown {
+    cursor: pointer;
+}
+
+.user-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    min-width: 150px;
+    display: none;
+    z-index: 1000;
+}
+
+.user-menu.show {
+    display: block;
+}
+
+.user-menu-item {
+    padding: 0.75rem 1rem;
+    color: var(--dark-color);
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.user-menu-item:hover {
+    background-color: #f5f5f5;
+}
+
+.user-menu-item:last-child {
+    border-bottom: none;
+}
+
+.bottom-header {
+    padding: 1rem 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+nav ul li {
+    flex: 1;
+    text-align: center;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-weight: 500;
+    display: block;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--secondary-color);
+    z-index: 2000;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.mobile-nav-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.mobile-nav-links {
+    list-style: none;
+}
+
+.mobile-nav-links li {
+    margin-bottom: 0.5rem;
+}
+
+.mobile-nav-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-size: 1.1rem;
+}
+
+.mobile-nav-links a.active,
+.mobile-nav-links a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* Main Content Styles */
+main {
+    padding: 2rem 0;
+    min-height: calc(100vh - 160px);
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.page-title {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--university-color);
+    padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.page-title-icon {
+    color: var(--university-color);
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--university-color);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--university-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(142, 68, 173, 0.2);
+}
+
+button {
+    background-color: var(--university-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #7d3c98;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+button.success {
+    background-color: var(--success-color);
+}
+
+button.success:hover {
+    background-color: #27ae60;
+}
+
+button.danger {
+    background-color: var(--danger-color);
+}
+
+button.danger:hover {
+    background-color: #c0392b;
+}
+
+button.warning {
+    background-color: var(--warning-color);
+}
+
+button.warning:hover {
+    background-color: #e67e22;
+}
+
+button.info {
+    background-color: var(--primary-color);
+}
+
+button.info:hover {
+    background-color: #2980b9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--light-color);
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+.status-available {
+    color: var(--success-color);
+    font-weight: 600;
+}
+
+.status-checked-out {
+    color: var(--danger-color);
+    font-weight: 600;
+}
+
+.alert {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.search-box {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.search-box input {
+    padding-left: 2.5rem;
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.stat-item {
+    background: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-item h4 {
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.stat-item p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--university-color);
+}
+
+.university-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--university-color), var(--secondary-color));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.course-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+.course-bca { background-color: #3498db; }
+.course-bba { background-color: #2ecc71; }
+.course-ballb { background-color: #e74c3c; }
+.course-mba { background-color: #9b59b6; }
+.course-bsc-csit { background-color: #f39c12; }
+.course-bdbm { background-color: #1abc9c; }
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Enhanced Login Page Styles */
+.login-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.login-content {
+    display: flex;
+    min-height: 600px;
+}
+
+.login-info {
+    flex: 1;
+    background: linear-gradient(135deg, var(--university-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-form-container {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-form {
+    margin-top: 1.5rem;
+}
+
+.login-error {
+    color: var(--danger-color);
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.university-logo {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.logo-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.login-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.login-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.features-list {
+    margin: 2rem 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    width: 30px;
+    text-align: center;
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.contact-info {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.contact-icon {
+    margin-right: 0.5rem;
+    width: 20px;
+    text-align: center;
+}
+
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.admin-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.admin-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    border: 2px solid var(--university-color);
+}
+
+.admin-details {
+    flex: 1;
+}
+
+.admin-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.admin-role {
+    color: var(--university-color);
+    font-size: 0.9rem;
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.admin-stat {
+    background: var(--light-color);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.admin-stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--university-color);
+}
+
+.admin-stat-label {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-branding {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.footer-branding-icon {
+    font-size: 1.2rem;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Mobile-Specific Styles */
+.mobile-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mobile-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--university-color);
+}
+
+.mobile-list-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-list-item:last-child {
+    border-bottom: none;
+}
+
+.mobile-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Touch-friendly improvements */
+button, .nav-link, .search-result-item {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+input, select, textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+}
+
+/* Free Search Styles */
+.search-container {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: none;
+}
+
+.search-result-item {
+    padding: 0.75rem;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.search-result-item:hover {
+    background-color: #f5f5f5;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item.active {
+    background-color: var(--light-color);
+}
+
+.search-result-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.search-result-details {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.selected-item {
+    background-color: var(--light-color);
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.selected-item .remove-selection {
+    float: right;
+    color: var(--danger-color);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.free-search-toggle {
+    display: flex;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.free-search-toggle button {
+    flex: 1;
+    background: white;
+    color: var(--dark-color);
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.free-search-toggle button.active {
+    background-color: var(--university-color);
+    color: white;
+}
+
+.free-search-toggle button:not(.active):hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-select {
+    display: none;
+}
+
+.free-search {
+    display: block;
+}
+
+.search-instruction {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+/* Print Styles */
+@media print {
+    .header, footer, .action-buttons, .search-box, .card:first-child {
+        display: none !important;
+    }
+    
+    .page {
+        display: block !important;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    /* Ensure the records page is the only one printed */
+    #dashboard, #books, #students, #check_out, #check_in, #admin, #login {
+        display: none !important;
+    }
+    
+    #records {
+        display: block !important;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .university-name {
+        font-size: 1.5rem;
+    }
+    
+    .library-system {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    nav ul {
+        display: none;
+    }
+    
+    .university-branding {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .user-info {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .stats-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .login-content {
+        flex-direction: column;
+    }
+    
+    .login-info {
+        order: 2;
+    }
+    
+    .login-form-container {
+        order: 1;
+    }
+    
+    /* Mobile table overrides */
+    table {
+        font-size: 0.9rem;
+    }
+    
+    th, td {
+        padding: 0.5rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .action-buttons button {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .university-name {
+        font-size: 1.3rem;
+    }
+    
+    .library-system {
+        font-size: 0.85rem;
+    }
+    
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .card {
+        padding: 1rem;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+    }
+    
+    .mobile-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .admin-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Authentication-specific styles */
+.not-logged-in .header,
+.not-logged-in footer {
+    display: none;
+}
+
+.not-logged-in main {
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.not-logged-in .container {
+    max-width: 100%;
+    padding: 0;
+}
+
+.not-logged-in #login {
+    display: block;
+    width: 100%;
+}
+
+.not-logged-in #login .login-container {
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .not-logged-in #login .login-container {
+        padding: 1.5rem;
+    }
+}
+
+/* Additional styles for improved UI */
+.action-buttons button {
+    margin-right: 5px;
+}
+
+.action-buttons button:last-child {
+    margin-right: 0;
+}
+
+.generated-id {
+    background-color: var(--light-color);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: var(--university-color);
+}
+
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+.empty-state-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
